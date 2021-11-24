@@ -21,7 +21,7 @@ steps:
     
 availableSecrets:
   secretManager:
-  - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/1
+  - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/2
     env: 'PASSWORD'
   - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/1
     env: 'USERNAME'
