@@ -1,5 +1,11 @@
 steps:
-  #Pull the latest gcloud image.
+  #Docker Login
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args: ['-c', 'docker login --username=$$USERNAME --password=$$PASSWORD']
+    secretEnv: ['USERNAME', 'PASSWORD']
+
+  #Pull the latest gcloud image.    
   - name: 'gcr.io/cloud-builders/docker'
     args: ['pull', 'gcr.io/cloud-builders/gcloud']
   # - name: 'gcr.io/cloud-builders/docker'
@@ -21,7 +27,7 @@ steps:
     
 availableSecrets:
   secretManager:
-  - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/2
+  - versionName: projects/new-project-329102/secrets/docker-secret-gjs/versions/1
     env: 'PASSWORD'
   - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/1
     env: 'USERNAME'
