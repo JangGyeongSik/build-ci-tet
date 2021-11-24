@@ -18,7 +18,13 @@ steps:
   - name: gcr.io/cloud-builders/docker
     #args: ["push", "gcr.io/$PROJECT_ID/ruby-sample-web-image:latest"]
     args: ['push', 'kqkdn1/argo-rollout-demo:1.0.0']
-
+    
+availableSecrets:
+  secretManager:
+  - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/1
+    env: 'PASSWORD'
+  - versionName: projects/new-project-329102/secrets/docker-secret-jgs/versions/1
+    env: 'USERNAME'
 #  - name: 'gcr.io/cloud-builders/kubectl'
 #    args: ['set', 'image', 'deployment/ruby-sample-web', 'my-container=gcr.io/$PROJECT_ID/ruby-sample-web-image']
 #    env:
