@@ -11,9 +11,9 @@ steps:
   # - name: 'gcr.io/cloud-builders/docker'
   #   args: ['build', '--tag=gcr.io/$PROJECT_ID/git', '.']
 
-  # Get source
-  - name: 'gcr.io/cloud-builders/git'
-    args: ['clone', 'https://github.com/JangGyeongSik/build-ci-tet.git']
+  # # Get source
+  # - name: 'gcr.io/cloud-builders/git'
+  #   args: ['clone', 'https://github.com/JangGyeongSik/build-ci-tet.git']
 
   # build docker image
   - name: gcr.io/cloud-builders/docker
